@@ -6,10 +6,10 @@ from requests.compat import urljoin
 
 def prepare_url(value):
     # Issue #1483: Make sure the URL always has a trailing slash
-    httpbin_url = value.url.rstrip('/') + '/'
+    httpbin_url = value.url.rstrip("/") + "/"
 
     def inner(*suffix):
-        return urljoin(httpbin_url, '/'.join(suffix))
+        return urljoin(httpbin_url, "/".join(suffix))
 
     return inner
 
